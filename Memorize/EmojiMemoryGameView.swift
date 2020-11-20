@@ -40,7 +40,9 @@ struct CardView: View {
                 Text(self.card.content)
             }
             else {
-            RoundedRectangle(cornerRadius: cornerRadius).fill()
+                if !card.isMatched {
+                    RoundedRectangle(cornerRadius: cornerRadius).fill()
+                }
             }
         }
             .aspectRatio(2/3, contentMode: .fit)
